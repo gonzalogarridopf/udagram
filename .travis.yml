@@ -16,12 +16,13 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t udagram-user ./udagram-user
-  - docker tag udagram-user YOUR_DOCKER_HUB/udagram-user:latest
-  - docker build -t udagram-feed ./udagram-feed
-  - docker tag udagram-feed YOUR_DOCKER_HUB/udagram-feed:latest
+  - docker tag udagram-user gonzalogarridopf/udagram-user:latest
+  # - docker build -t udagram-feed ./udagram-feed
+  # - docker tag udagram-feed gonzalogarridopf/udagram-feed:latest
   # - docker build -t udagram-frontend ./udagram-frontend
   # - docker tag udagram-frontend YOUR_DOCKER_HUB/udagram-frontend:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node
+  - docker push gonzalogarridopf/udagram-user
+  # - docker push gonzalogarridopf/udagram-feed
