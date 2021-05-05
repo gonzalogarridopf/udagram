@@ -16,26 +16,24 @@ spec:
     spec:
       containers:
       - name: udagram-user
-        image: ricardiles/udagram-user
+        image: gonzalogarridopf/udagram-user
         env:
         - name: POSTGRES_USERNAME
-          value: "rardiles"
+          value: "udacity"
         - name: POSTGRES_PASSWORD
-          value: "udacity123.."
+          value: "udacity21"
         - name: POSTGRES_HOST
-          value: "udacity-dev.c4k86qizidvt.us-west-2.rds.amazonaws.com"
+          value: "udagram.cfpkxcjzcqtk.us-east-2.rds.amazonaws.com"
         - name: POSTGRES_DB
-          value: "postgres"
+          value: "udagram"
         - name: AWS_BUCKET
-          value: "udacity-229318163752-dev"
+          value: "udagram-548866588322-dev"
         - name: AWS_REGION
           value: "us-west-2"
         - name: AWS_PROFILE
           value: "default"
-        - name: JWT_SECRET
-          value: "helloudacity"
         - name: URL
-          value: "http://a6a0c3171e9844678b15ce78fa172469-843829554.us-east-2.elb.amazonaws.com:4200/"
+          value: "http://a6a0c3171e9844678b15ce78fa172469-843829554.us-east-2.elb.amazonaws.com:4200"
         - name: PORT
           value: "8080"
         resources:
