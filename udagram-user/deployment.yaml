@@ -1,39 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-user
+  name: udagram-user-app
   labels:
-    app: udagram-user
+    app: udagram-user-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: udagram-user
+      app: udagram-user-app
   template:
     metadata:
       labels:
-        app: udagram-user
+        app: udagram-user-app
     spec:
       containers:
       - name: udagram-user
-        image: gonzalogarridopf/udagram-user
+        image: ricardiles/udagram-user
         env:
         - name: POSTGRES_USERNAME
-          value: "udacity"
+          value: "rardiles"
         - name: POSTGRES_PASSWORD
-          value: "udacity21"
+          value: "udacity123.."
         - name: POSTGRES_HOST
-          value: "udagram.cfpkxcjzcqtk.us-east-2.rds.amazonaws.com"
+          value: "udacity-dev.c4k86qizidvt.us-west-2.rds.amazonaws.com"
         - name: POSTGRES_DB
-          value: "udagram"
+          value: "postgres"
         - name: AWS_BUCKET
-          value: "udagram-548866588322-dev"
+          value: "udacity-229318163752-dev"
         - name: AWS_REGION
           value: "us-west-2"
         - name: AWS_PROFILE
           value: "default"
+        - name: JWT_SECRET
+          value: "helloudacity"
         - name: URL
-          value: "http://aa855171775a7423fb5ff237c461bcb0-103792440.us-east-2.elb.amazonaws.com:4200"
+          value: "http://a6a0c3171e9844678b15ce78fa172469-843829554.us-east-2.elb.amazonaws.com:4200/"
         - name: PORT
           value: "8080"
         resources:

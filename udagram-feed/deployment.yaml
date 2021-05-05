@@ -33,7 +33,7 @@ spec:
         - name: AWS_PROFILE
           value: "default"
         - name: URL
-          value: "http://aa855171775a7423fb5ff237c461bcb0-103792440.us-east-2.elb.amazonaws.com:4200"
+          value: "http://a6a0c3171e9844678b15ce78fa172469-843829554.us-east-2.elb.amazonaws.com:4200"
         - name: PORT
           value: "8081"
         resources:
