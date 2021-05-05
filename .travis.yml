@@ -15,15 +15,15 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-user --build-arg POSTGRES_USERNAME=$POSTGRES_USERNAME --build-arg POSTGRES_PASSWORD=$POSTGRES_PASSWORD --build-arg POSTGRES_HOST=$POSTGRES_HOST --build-arg POSTGRES_DB=$POSTGRES_DB --build-arg AWS_BUCKET=$AWS_BUCKET --build-arg AWS_REGION=$AWS_REGION --build-arg AWS_PROFILE=$AWS_PROFILE --build-arg JWT_SECRET=$JWT_SECRET --build-arg URL=$URL ./udagram-user
-  # - docker build -t udagram-user ./udagram-user
+  - docker build -t udagram-user ./udagram-user
   - docker tag udagram-user gonzalogarridopf/udagram-user:latest
-  # - docker build -t udagram-feed ./udagram-feed
-  # - docker tag udagram-feed gonzalogarridopf/udagram-feed:latest
-  # - docker build -t udagram-frontend ./udagram-frontend
-  # - docker tag udagram-frontend YOUR_DOCKER_HUB/udagram-frontend:latest
+  - docker build -t udagram-feed ./udagram-feed
+  - docker tag udagram-feed gonzalogarridopf/udagram-feed:latest
+  - docker build -t udagram-frontend ./udagram-frontend
+  - docker tag udagram-frontend gonzalogarridopf/udagram-frontend:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push gonzalogarridopf/udagram-user
-  # - docker push gonzalogarridopf/udagram-feed
+  - docker push gonzalogarridopf/udagram-feed
+  - docker push gonzalogarridopf/udagram-frontend
