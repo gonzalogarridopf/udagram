@@ -18,7 +18,7 @@ spec:
       - name: udagram-user
         image: gonzalogarridopf/udagram-user
         ports:
-        - containerPort: 8080
+        - containerPort: 8100
       # - name: udagram-feed
       #   image: gonzalogarridopf/udagram-feed
       #   ports:
